@@ -1,12 +1,7 @@
-import { useState } from 'react'
-import './App.css'
+import Vacinas from "./pages/Vacinas";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div></div>
-  )
+  return <Vacinas />;
 }
 
-export default App
+export default App;

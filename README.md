@@ -1,16 +1,59 @@
-# React + Vite
+# Carteira Vacina Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend da aplicacao Carteira Vacina, desenvolvido com React e Vite.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js instalado
+- Backend `carteira-vacina` rodando localmente
+- Banco de dados configurado para o backend
 
-## React Compiler
+## Como rodar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Instale as dependencias:
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+2. Inicie o frontend:
+```bash
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Acesse no navegador:
+```text
+http://localhost:5173/
+```
+
+## Integracao com o backend
+
+O frontend consome a API do backend pela porta `8089`.
+
+Em ambiente de desenvolvimento, o Vite faz o proxy das requisicoes `/api` para:
+
+```text
+http://localhost:8089
+```
+
+Rotas usadas atualmente:
+
+- `GET /vacina/consultar`
+- `GET /vacina/consultar/faixa_etaria/{faixa}`
+
+## Importante para testes
+
+Para o frontend funcionar corretamente, e necessario que:
+
+- o backend esteja rodando na porta `8089`
+- o banco de dados do backend esteja funcionando
+- a rota `http://localhost:8089/vacina/consultar` responda com sucesso
+
+Se o backend ou o banco nao estiverem disponiveis, o frontend vai abrir, mas nao conseguira carregar os dados das vacinas.
+
+## Build
+
+Para gerar a versao de producao:
+
+```bash
+npm run build
+```
