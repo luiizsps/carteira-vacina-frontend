@@ -1,11 +1,13 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
-
+import Dashboard from './pages/Dashboard/Dashboard.jsx'
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
-    <div></div>
+    <div>
+      <Dashboard/>
+    </div>
   )
 }
 
