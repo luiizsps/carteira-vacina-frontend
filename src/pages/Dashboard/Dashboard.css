@@ -16,3 +16,13 @@
 h1{
     font-size: 40px;
 }
+
+.cards-grid > :last-child {
+    grid-column: span 2;
+}
+
+/* controla altura do calendário */
+.calendario-container {
+    height: 350px;
+    
+}
